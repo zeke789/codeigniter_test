@@ -21,7 +21,7 @@
     <div>
         <ul id="menu">
             <li><a href="/codeigniter/">Welcome</a></li>
-            <li><a href="/codeigniter/main/">Services</a></li>
+            <li><a href="/codeigniter/services/">Services</a></li>
             <li><a href="/codeigniter/manage/add-service">Add Service </a></li>
             <li><a href="/codeigniter/manage/staff">Staff </a></li>
         </ul>

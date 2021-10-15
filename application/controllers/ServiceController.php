@@ -8,6 +8,7 @@ class ServiceController extends CI_Controller{
         parent::__construct();
         $this->load->model('service');
         $this->load->helper('url_helper');
+
         // NOT WORKING:  # $this->load->library('../controllers/StaffController');
     }
 

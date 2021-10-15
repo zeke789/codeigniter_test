@@ -5,7 +5,7 @@ if( isset($allServices) ){ ?>
     foreach ($allServices as $s){ ?>
         <tr>
             <td> <?= $s['id'] ?></td>
-            <td> <a href=" <?= base_url() ?>main/<?= $s['id'] ?>" ><?= $s['name'] ?></a> </td>
+            <td> <a href=" <?= base_url() ?>services/<?= $s['id'] ?>" ><?= $s['name'] ?></a> </td>
             <td> <?= $s['description'] ?></td>
             <td><a href="<?= base_url() . "manage/staff/" . $s['staff_id'] ?>"><?= $s['staffName'] ?></a>  </td>
         </tr><?php
@@ -14,11 +14,13 @@ if( isset($allServices) ){ ?>
 }
 
 if( isset($getService) ){ ?>
-    <h3>Service: <?=  $getService['name'] ?></h3>
-    <p>id <?=  $getService['id'] ?></p>
-    <p>description <?=  $getService['description'] ?></p>
-    <p>staff id <?=  $getService['staff_id'] ?></p>
-    <p>contributors id <?=  $getService['contributors_id'] ?></p>
+    <div style="margin:20px">
+        <h3>Service: <?=  $getService['name'] ?></h3>
+        <p>id <?=  $getService['id'] ?></p>
+        <p>description <?=  $getService['description'] ?></p>
+        <p>staff: <a href="<?= base_url() . "manage/staff/" .$getService['staff_id'] ?>"><?= $getService['staffName'] ?> </a> </p>
+        <p>contributors id <?=  $getService['contributors_id'] ?></p>
+    </div>
 <?php
 } ?>
 

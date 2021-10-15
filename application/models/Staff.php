@@ -16,13 +16,15 @@ class Staff extends CI_Model {
 
     public function getStaffMember($id)
     {
-        /*
-            join services on staff.id = services.staff_id and cou
-                or
-          get all services where staff_id = id
-        */
-        $query = $this->db->get_where('staff', array('id' => $id));
-        return $query->row_array();
+        $this->db
+            ->select('ifnull(srvcs.id,"--") as service_id, ifnull(srvcs.name,"--") as serviceName,stf.id, stf.name ')
+            ->from('staff as stf')
+            ->join('services as srvcs', 'srvcs.staff_id = stf.id','left')
+            ->where('stf.id',$id);
+           return $this->db->get()->result_array();
+
+       # $query = $this->db->get_where('staff', array('id' => $id));
+       # return $query->row_array();
     }
 
 }
