@@ -3,19 +3,21 @@
 
 class StaffController extends CI_Controller {
 
-    private $testLoad;
     public function __construct()
     {
         parent::__construct();
         $this->load->model('staff');
         $this->load->helper('url_helper');
+    }
 
-    }
-    public function asd1()
+    public function getAll()
     {
-        var_dump("xxfvasdgfadsgasg");die;
+        $data['allStaff'] = $this->staff->getAll();
+        if (!empty($data['allStaff'])) return $data['allStaff'];
+        return [];
     }
-    public function index()
+
+    public function viewAll()
     {
         $data['allStaff'] = $this->staff->getAll();
         if (empty($data['allStaff']))  show_404();
@@ -23,7 +25,6 @@ class StaffController extends CI_Controller {
         $this->load->view('templates/header', $data);
         $this->load->view('pages/manage/staff_list', $data);
         $this->load->view('templates/footer', $data);
-
     }
 
     public function viewById($id = null)
@@ -40,4 +41,5 @@ class StaffController extends CI_Controller {
         $this->load->view('pages/manage/staff_list', $data);
         $this->load->view('templates/footer', $data);
     }
+
 }

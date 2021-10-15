@@ -9,6 +9,7 @@
         td,table{
             border:1px solid  black;
         }
+        td{ padding:4px; }
 
     </style>
 </head>

@@ -1,21 +1,22 @@
 <?php
+require_once(APPPATH.'controllers/StaffController.php');
 
-
-class ServiceController extends CI_Controller {
+class ServiceController extends CI_Controller{
 
     public function __construct()
     {
         parent::__construct();
         $this->load->model('service');
         $this->load->helper('url_helper');
-       // $this->load->library('../controllers/pages');
+        // NOT WORKING:  # $this->load->library('../controllers/StaffController');
     }
 
     public function viewAddService()
     {
         $data['title']="Add New Service";
-        //get staffs and return to view
-        //get contributors and return to view
+        $staffControl = new StaffController();
+        $staff = $staffControl->getAll();
+        $data['staff'] = $staff;
         $this->load->view('templates/header', $data);
         $this->load->view('pages/manage/add_service', $data);
         $this->load->view('templates/footer', $data);

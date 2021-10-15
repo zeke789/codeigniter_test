@@ -9,14 +9,9 @@ class Service extends CI_Model {
 
     public function getAll()
     {
-        /*  join staff on staff.id = services.staff_id
-
-         SELECT services.id as serviceId,contributors.name as contributorName
-           FROM `services`
-           JOIN contributors on services.contributors_id  LIKE CONCAT('%,', contributors.id  ,',%')
-        */
-        $query = $this->db->get('services');
-        return $query->result_array();
+        $this->db->select('srvcs.id, srvcs.name, srvcs.staff_id, srvcs.description, srvcs.contributors_id ,stf.name as staffName' )->from('services as srvcs');
+        $this->db->join('staff as stf', 'stf.id = srvcs.staff_id');
+        return $this->db->get()->result_array();
     }
 
     public function getById($id)

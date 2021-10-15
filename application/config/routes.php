@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-$route['manage/staff'] = 'staffcontroller';
+$route['manage/staff'] = 'staffcontroller/viewall';
 $route['manage/staff/(:any)'] = 'staffcontroller/viewbyid/$1';
 
 $route['manage/add-service'] = 'servicecontroller/viewaddservice';
