@@ -8,9 +8,20 @@ class ServiceController extends CI_Controller {
         parent::__construct();
         $this->load->model('service');
         $this->load->helper('url_helper');
+       // $this->load->library('../controllers/pages');
     }
 
-    public function index()
+    public function viewAddService()
+    {
+        $data['title']="Add New Service";
+        //get staffs and return to view
+        //get contributors and return to view
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/manage/add_service', $data);
+        $this->load->view('templates/footer', $data);
+    }
+
+    public function getAll()
     {
         $data['allServices'] = $this->service->getAll();
         if (empty($data['allServices']))  show_404();
@@ -18,8 +29,8 @@ class ServiceController extends CI_Controller {
         $this->load->view('templates/header', $data);
         $this->load->view('pages/main_page', $data);
         $this->load->view('templates/footer', $data);
-
     }
+
 
     public function view($id)
     {

@@ -20,13 +20,10 @@ class Pages extends CI_Controller {
                         $heading = 'Error...'
                 );
             $data['title'] = str_replace("_","",ucwords($page)) . " - Service " . $serviceType;
-            $data['msj1'] = "Get service with id " . $serviceType;
             $this->load->view('templates/header',$data);
             $this->load->view('pages/'.$page,$data );
             $this->load->view('templates/footer');
         }
-
-
     }
 
     public function secondViews($page)

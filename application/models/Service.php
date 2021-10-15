@@ -21,7 +21,6 @@ class Service extends CI_Model {
 
     public function getById($id)
     {
-
         $query = $this->db->get_where('services', array('id' => $id));
         return $query->row_array();
     }

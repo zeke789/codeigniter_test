@@ -51,27 +51,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 
-#$route['manage/staff'] = 'pages/secondViews/staff_list';
+
+
 $route['manage/staff'] = 'staffcontroller';
 $route['manage/staff/(:any)'] = 'staffcontroller/viewbyid/$1';
 
+$route['manage/add-service'] = 'servicecontroller/viewaddservice';
 
-$route['main'] = 'servicecontroller';
+
+$route['main'] = 'servicecontroller/getAll';
 $route['main/(:any)'] = 'servicecontroller/view/$1';
-#$route->post("manage/addService") = 'servicecontroller/add';
+
+
+
+
 
 $route['default_controller'] = 'pages/mainViews';
 $route['welcome'] = 'pages/mainViews/welcome_message';
 
-//$route['main'] = 'pages/mainViews/main_page';
-//$route['main/(:any)'] = 'pages/mainViews/main_page/$1';
+# $route['manage/staff'] = 'pages/secondViews/staff_list';
+# $route['main'] = 'pages/mainViews/main_page';
+# $route['main/(:any)'] = 'pages/mainViews/main_page/$1';
 
 
 
 
 
 
-$route['manage/add-service'] = 'pages/secondViews/add_service';
 
 
 
