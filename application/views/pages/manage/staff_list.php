@@ -22,7 +22,7 @@ if(isset($staffMember)){
         <ul> <?php
             foreach ($staffMember as $srv) {
                 if($srv['serviceName'] != "--" ){ ?>
-                        <li><a href="<?= base_url() . "services/". $srv['service_id'] ?>"><?= $srv['serviceName'] ?></a> </li>
+                        <li><a href="<?= base_url() . "services/view/". $srv['service_id'] ?>"><?= $srv['serviceName'] ?></a> </li>
                     <?php
                 }
             } ?>

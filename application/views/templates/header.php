@@ -10,7 +10,7 @@
             border:1px solid  black;
         }
         td{ padding:4px; }
-
+     .page-link-active{ color:red;font-weight: bold }
     </style>
 </head>
 <body>

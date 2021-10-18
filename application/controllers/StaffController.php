@@ -7,6 +7,9 @@ class StaffController extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('staff');
+        /*
+         * todo los helper que se cargan se pueden usar en la vista
+         * */
         $this->load->helper('url_helper');
     }
 

@@ -55,13 +55,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $route['services'] = 'servicecontroller/getAll';
-$route['services/(:any)'] = 'servicecontroller/view/$1';
+$route['services/view/(:any)'] = 'servicecontroller/view/$1';
+$route['services/(:any)'] = 'servicecontroller/getAll/$1';
+
+$route['servicess/(:any)'] = 'servicecontroller/getAllWithJavascript/$1';
 
 $route['manage/staff'] = 'staffcontroller/viewall';
 $route['manage/staff/(:any)'] = 'staffcontroller/viewbyid/$1';
 
 $route['manage/add-service'] = 'servicecontroller/viewaddservice';
-
 
 
 
